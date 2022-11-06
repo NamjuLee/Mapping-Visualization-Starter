@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "jsxFactory": "tsx",
+    "target": "ES2015",
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "types": [ "arcgis-js-api" ]
+  },
+  "include": [
+    "src/*", 
+    "src/app/Core/index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+  ],
+
+}
