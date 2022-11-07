@@ -1,6 +1,6 @@
-import MapView = require("esri/views/MapView");
-import Point = require("esri/geometry/Point");
-import { App } from '../App';
+import MapView from "esri/views/MapView";
+import Point from "esri/geometry/Point";
+import { App } from '..';
 
 export class Core {
     t: number;
@@ -173,32 +173,27 @@ export class EventInteraction {
         this.InitArcGISMapEventV4x();
     }
     InitArcGISMapEventV4x() {
-        this.app.mView.on('pointer-down', (e: any) => {
+        this.app.mView.on('pointer-down', (e: __esri.MapViewPointerDownEvent) => {
             const ev = this.CommonEventBuilderArcGIS(e);
             ev.type = MOUSE_TYPE.DOWN;
             this.app.MouseEvent(ev);
         });
-        this.app.mView.on('pointer-up', (e: any) => {
-            const ev = this.CommonEventBuilderArcGIS(e);
-            ev.type = MOUSE_TYPE.UP;
-            this.app.MouseEvent(ev);
-        });
-        this.app.mView.on('click', (e: any) => {
+        this.app.mView.on('click', (e: __esri.MapViewPointerDownEvent) => {
             const ev = this.CommonEventBuilderArcGIS(e);
             ev.type = MOUSE_TYPE.CLICK;
             this.app.MouseEvent(ev);
         });
-        // this.app.mView.on('pointer-drag', (e: any) => {
-        //     const ev = this.CommonEventBuilderArcGIS(e);
-        //     ev.type = MOUSE_TYPE.DRAG;
-        //     this.app.MouseEvent(ev);
-        // });
-        this.app.mView.on('pointer-move', (e: any) => {
+        this.app.mView.on('pointer-drag', (e: __esri.MapViewPointerDownEvent) => {
+            const ev = this.CommonEventBuilderArcGIS(e);
+            ev.type = MOUSE_TYPE.DRAG;
+            this.app.MouseEvent(ev);
+        });
+        this.app.mView.on('pointer-move', (e: __esri.MapViewPointerMoveEvent) => {
             const ev = this.CommonEventBuilderArcGIS(e);
             ev.type = MOUSE_TYPE.MOVE;
             this.app.MouseEvent(ev);
         });
-        this.app.mView.on('key-down', (e: any) => {
+        this.app.mView.on('key-down', (e: __esri.MapViewKeyDownEvent) => {
             let keyPressed = e.key;
             if (keyPressed.slice(0, 5) === 'Arrow' || e.key === '-' || e.key === '=' || e.key === 'd') {
                 e.stopPropagation();
@@ -207,11 +202,12 @@ export class EventInteraction {
             this.KeyDownJSAPI4X(e.native);
         });
     }
-    MouseClickLeftArcGIS(e: any) {
+    MouseClickLeftArcGIS(e: __esri.MapViewClickEvent | __esri.MapViewPointerDownEvent) {
         let mEvent = this.CommonEventBuilderArcGIS(e);
         this.app.MouseEvent(mEvent);
     }
-    CommonEventBuilderArcGIS(e: any): MouseEventData {
+    CommonEventBuilderArcGIS(e: __esri.MapViewClickEvent | __esri.MapViewDoubleClickEvent |
+        __esri.MapViewPointerUpEvent | __esri.MapViewPointerDownEvent | __esri.MapViewDragEvent): MouseEventData {
         let mEvent: MouseEventData = new MouseEventData();
         mEvent.preX = EventInteraction.mouseEventDataPre.x;
         mEvent.preY = EventInteraction.mouseEventDataPre.y;

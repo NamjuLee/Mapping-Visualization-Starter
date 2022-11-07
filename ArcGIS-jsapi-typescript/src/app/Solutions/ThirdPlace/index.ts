@@ -1,4 +1,5 @@
 import { SolutionBase, Core, KeyboardEventData } from '../../Core/index';
+
 export class Solution extends SolutionBase {
 
     pts: number[][] = [];
@@ -7,7 +8,6 @@ export class Solution extends SolutionBase {
     ptsLib: number[][] = [];
     constructor(core: Core) {
         super(core);
-        
     }
     init() {
         getJSON('https://raw.githubusercontent.com/NamjuLee/data/master/Boston/thrid-place/ThridPlaceBoston.json').then((d) => {

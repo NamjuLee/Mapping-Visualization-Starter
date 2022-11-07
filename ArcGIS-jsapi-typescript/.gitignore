@@ -1,4 +1,8 @@
-node_modules/*
-.vscode/*
-**/*.js
-**/*.js.map
+
+# dependencies
+**/node_modules
+
+*.js
+*.js.map
+
+!webpack.config.js

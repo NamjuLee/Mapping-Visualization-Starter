@@ -1,9 +1,10 @@
-import MapView = require("esri/views/MapView");
+import MapView from 'esri/views/MapView';
 import { Core } from './Core/index';
-
+import { version } from 'njscore';
 export class App {
     static init(view: MapView) {
         console.debug('app init....!!!');
+        console.log('njscore', version);
         new App(view);
     }
     public divHost: HTMLElement;
@@ -14,8 +15,8 @@ export class App {
         this.execution();
     }
     async execution() {
-        return import('./Solutions/Starter/index').then(({ Solution }) => {
-        // return import('./Solutions/ThirdPlace/index').then(({ Solution }) => {
+        // return import('./Solutions/Starter/index').then(({ Solution }) => {
+        return import('./Solutions/ThirdPlace/index').then(({ Solution }) => {
             new Solution(this.core);
         }).catch((err) => { console.log('Stop loading Apps.'); console.log(err); });
     }
