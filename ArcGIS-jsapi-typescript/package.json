@@ -36,7 +36,7 @@
     "webpack": "^4.41.5",
     "webpack-cli": "~3.3.10",
     "webpack-dev-server": "^3.10.2",
-    "njscore": "0.0.31"
+    "njscore": "^0.1.0"
   },
   "dependencies": {
     "@arcgis/webpack-plugin": "~4.13.0"

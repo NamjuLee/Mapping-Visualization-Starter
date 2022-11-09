@@ -75,6 +75,9 @@ export class Core {
 
         this.start(this.ctx);
     }
+    mViewCenter(lon: number, lat: number) {
+        this.mView.center = new Point({x: lon, y: lat})
+    }
     start(ctx: CanvasRenderingContext2D) {
         this.t = 0.0;
         this.init(ctx);

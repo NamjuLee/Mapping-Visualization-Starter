@@ -3806,10 +3806,10 @@ nice-try@^1.0.4:
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
-njscore@0.0.31:
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/njscore/-/njscore-0.0.31.tgz#91e6f744dc02bb78c999b64a0ca9af2bbfa8a16f"
-  integrity sha512-uiSaTeU2Ct7OiUTZP6CljDhWpgK0iMnkz1uk25bNqhaWZNUxsXJhvIXC6kyPXUKKgjAoEy023Bt32N8m+LVIYw==
+njscore@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/njscore/-/njscore-0.1.0.tgz#da7275f694ed8fff01909491255c1c22de69435f"
+  integrity sha512-VULgLSD2yoizAejYRUjRVnuzy+KoZcwudmFyr8tYLCNlRxGDieLK9z6MGm1ithhzGFaj6d4NGqE4fYWlMHPB2g==
 
 no-case@^2.2.0:
   version "2.3.2"
