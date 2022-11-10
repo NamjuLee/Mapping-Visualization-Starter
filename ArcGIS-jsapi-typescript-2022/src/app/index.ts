@@ -15,9 +15,9 @@ export class App {
         this.execution();
     }
     async execution() {
-        return import('./Solutions/1_Starter').then(({ Solution }) => {
+        // return import('./Solutions/1_Starter').then(({ Solution }) => {
         // return import('./Solutions/2_ThirdPlace').then(({ Solution }) => {
-        // return import('./Solutions/3_flower').then(({ Solution }) => {
+        return import('./Solutions/3_flower').then(({ Solution }) => {
         // return import('./Solutions/4_FalseColor').then(({ Solution }) => {
             new Solution(this.core);
         }).catch((err) => { console.log('Stop loading Apps.'); console.log(err); });
