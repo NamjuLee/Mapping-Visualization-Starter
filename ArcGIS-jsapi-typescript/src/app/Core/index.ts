@@ -140,18 +140,26 @@ export class Core {
     }
 } 
 export abstract class SolutionBase {
+    private isInit = true;
     public core: Core;
     constructor(core: Core) {
         this.core = core;
-        this.init(this.core.ctx);
-        this.core.render = (ctx: CanvasRenderingContext2D) => this.render(ctx);
         this.core.keyEvent = (k: KeyboardEventData) => this.keyDown(k);
         this.core.mouseDown = (x: number, y: number) => this.mouseDown(x, y);
         this.core.mouseUp = (x: number, y: number) => this.mouseUp(x, y);
         this.core.mouseClick = (x: number, y: number) => this.mouseClick(x, y);
         this.core.mouseMove = (x: number, y: number) => this.mouseMove(x, y);
+        this.core.render = (ctx: CanvasRenderingContext2D) => this.renderPre(ctx);
         
     }
+    public renderPre(ctx: CanvasRenderingContext2D): void {
+        if (this.isInit) {
+            this.init(ctx);
+            this.isInit = false;
+        } else {
+            this.render(ctx);
+        }
+    };
     public init(ctx: CanvasRenderingContext2D): void {};
     public render(ctx: CanvasRenderingContext2D): void {};
     public mouseDown(x: number, y: number): void {};

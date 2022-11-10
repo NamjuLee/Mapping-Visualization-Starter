@@ -5,7 +5,7 @@ export class Solution extends SolutionBase {
     constructor(core: Core) {
         super(core);
     }
-    render(ctx: CanvasRenderingContext2D) {
+    public render(ctx: CanvasRenderingContext2D) {
         for (let i = 0; i < this.pts.length; ++i) { 
             const projected = this.core.toScreen(this.pts[i][0], this.pts[i][1]); 
             renderPoint(ctx, projected[0], projected[1], this.core.t);
@@ -14,23 +14,23 @@ export class Solution extends SolutionBase {
         renderPoint(ctx, pos[0], pos[1], this.core.t);
 
     }
-    keyDown(k: KeyboardEventData): void {
+    public keyDown(k: KeyboardEventData): void {
         console.log('key pressed', k);
     }
-    mouseDown(x: number, y: number): void {
+    public mouseDown(x: number, y: number): void {
         console.log('mouse down')
     }
-    mouseUp(x: number, y: number): void {
+    public mouseUp(x: number, y: number): void {
         console.log('mouse up')
     }
-    mouseDrag(x: number, y: number): void {
+    public mouseDrag(x: number, y: number): void {
         console.log('mouse drag')
     }
-    mouseClick(x: number, y: number): void {
+    public mouseClick(x: number, y: number): void {
         const mapProjected = this.core.ToMap(x, y);
         this.pts.push(mapProjected);
     }
-    mouseMove(x: number, y: number) {
+    public mouseMove(x: number, y: number) {
 
     }
 }
