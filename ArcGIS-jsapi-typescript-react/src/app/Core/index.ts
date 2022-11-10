@@ -90,9 +90,9 @@ export class Core {
         this.Draw(ctx);
     }
     Draw(ctx: CanvasRenderingContext2D) {
-        requestAnimationFrame(() => { this.Draw(ctx); });
-        this.t += 0.1;
         this.Clear(ctx);
+        this.t += 0.1;
+        requestAnimationFrame(() => { this.Draw(ctx); });
         this.render(ctx);
     }
     Clear(ctx: CanvasRenderingContext2D) {

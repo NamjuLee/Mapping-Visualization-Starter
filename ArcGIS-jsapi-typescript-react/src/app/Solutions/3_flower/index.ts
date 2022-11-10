@@ -6,10 +6,10 @@ export class Solution extends SolutionBase {
     constructor(core: Core) {
         super(core);
         console.log(window.location)
-        console.log(process.env.PUBLIC_URL)
+        // console.log(process.env.PUBLIC_URL)
     }
     init() {
-        console.log(process.env.PUBLIC_URL + '/static/EN_flower_dataset_clean.csv');
+        // console.log(process.env.PUBLIC_URL + '/static/EN_flower_dataset_clean.csv');
         getCSV(process.env.PUBLIC_URL + '/static/EN_flower_dataset_clean.csv').then((d) => {
             let count = 0;
             let latSum = 0;
@@ -54,7 +54,7 @@ export class Solution extends SolutionBase {
 
         for (let i = 0; i < this.pts.length; ++i) { 
             const projected = this.core.toScreen(this.pts[i][0], this.pts[i][1]); 
-            renderPoint(ctx, projected[0], projected[1], this.core.t + 3, 'rgba(255, 0, 0, 0.85)' );
+            // renderPoint(ctx, projected[0], projected[1], this.core.t + 3, 'rgba(255, 0, 0, 0.85)' );
         }
 
     }

@@ -68,7 +68,6 @@ export class Solution extends SolutionBase {
         const w = 2;
         const h = 20;
         for (let i = 0 ; i < this.colorArray.length; ++i) {
-
             ctx.beginPath();
             ctx.rect(i * w + xOff, yOff, w, h)
             ctx.closePath();
