@@ -6,7 +6,7 @@ export const example = (): void => {
 	// TO MAKE THE MAP APPEAR YOU MUST
 	// ADD YOUR ACCESS TOKEN FROM
 	// https://account.mapbox.com
-	mapboxgl.accessToken = 'pk.eyJ1IjoiZGVzaWduanUiLCJhIjoiY2xhNGU0YWo4MDlhYzNwdHBwenVvang4eiJ9.P3sX4l_3KjdPeRRbVS1VVg.NjkEy';
+	mapboxgl.accessToken = 'pk.eyJ1IjoiZGVzaWduanUiLCJhIjoiY2xhNGU0YWo4MDlhYzNwdHBwenVvang4eiJ9.P3sX4l_3KjdPeRRbVS1VVg.njzaWduanUiLCJhIjo';
     //Animation from https://javascript.tutorials24x7.com/blog/how-to-draw-animated-circles-in-html5-canvas
 
     const canvas = document.createElement('canvas');
